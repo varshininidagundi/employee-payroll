@@ -1,0 +1,52 @@
+#first, #second, #third, #fourth{
+    width : 20px;
+    height : 20px;
+}
+
+.body{
+    margin-top: 50px;
+    margin-left: 300px;/*pixel - 1?96 of inch*/
+    margin-right: 420px;
+background-color: whitesmoke;
+}
+.note{
+    box-sizing: border-box;
+    height:"400px" ;
+    width:"400px";
+}
+.divbody{
+    border-style: solid;
+    /* border-radius: 1%; */
+    border-width: 0.001cm;
+    width:826px;
+    height: 711px;
+    padding-top: 30px; 
+    padding-bottom: 50px;
+    border-color: rgb(226, 219, 219);
+    background-color: rgb(252, 253, 253);
+    box-shadow: 2.5px 2.5px 2.5px rgb(211, 209, 209);
+    padding-left: 80px;
+}
+.form{
+    padding-top: 20px;
+    align-content: center;
+}
+
+.class{
+    background-position: left;
+    margin-right: 40px;
+}
+.label{
+    /* display: inline-block; */
+    width:30%;
+    float : left;
+}
+.input{
+    /* display: inline-block; */
+    width:70%;
+    float: left;
+}
+
+
+
+
