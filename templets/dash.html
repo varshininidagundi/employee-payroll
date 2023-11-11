@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="D:\nodejs_basics\employee_payroll\styles\dashboard.css">
     <title>Dashboard</title>
 </head>
-
 <body>
     <div class="container">
         <div class="header">
@@ -19,24 +16,25 @@
             </div>
         </div>
          <div class="outer-cnt">
-            <div class="above-emp-cnt">
-                
+            <div class="above-emp-cnt">         
                     <div class="empinbody">Employee Details</div>
+                    <span id="countValue">  </span>
                     <div class="add-cnt">
-                        <button><img class ="magnify" src="D:\nodejs_basics\employee_payroll\assets\search.png"></button>
+                        <img class ="magnify" src="D:\nodejs_basics\employee_payroll\assets\search.png">
                         <button class="add-button">
                             Add User</button>
                     </div>
-
-                
-            </div>
-
-            <!--<div class="below-table-cnt">
-
+         </div>
+            <div class="below-table-cnt">
                 <table class="table">
-
                     <thead class="thead">
                         <tr>
+                            <!-- <span class="th-thead-one"></span>
+                            <span class="th-thead-name">Name</span>
+                            <span class="th-thead-gender">Gender</span>
+                            <span class="th-thead-department">Department</span>
+                            <span class="th-thead-salary">Salary</span>
+                            <span class="th-thead-startdate">Start Date</span> -->
                             <th style="width: 5%; height: 30px; color: white;"></th>
                             <th style="width: 30%; height: 30px; color: white;">Name</th>
                             <th style="width: 10%; height: 30px; color: white;">Gender</th>
@@ -46,31 +44,25 @@
                             <th id="action" style="width: 25%; height: 30px; color: white;">Actions</th>
                         </tr>
                     </thead>
-
-
                     <tbody id="employeeTableBody">
-                        <tr style="background-color: white ;">
-                            <td><img src="D:\nodejs_basics\employee_payroll\assets\men.jpg" alt="Profile Image"
+                        <tr class="table-row-cnt">
+                            <div></div>
+                            <!-- <td><img src="../assets/blackwomen.png" alt="Profile Image"
                                     class="img"></td>
                             <td>John Doe</td>
                             <td>Male</td>
                             <td>IT Department</td>
                             <td>$60,000</td>
                             <td>2023-01-15</td>
-                            <td><button><div><img class="icons"
-                                            src="D:\nodejs_basics\employee_payroll\assets\pencil.png"></button>
-                                <button><img class="icons"
-                                        src="D:\nodejs_basics\employee_payroll\assets\trash.png"></button></div></td>
+                            <td><div class="icon-cnt">
+                                <img class="icons" src="D:\nodejs_basics\employee_payroll\assets\trash.png">
+                                <img class="icons" src="D:\nodejs_basics\employee_payroll\assets\pencil.png"></div></td> -->
                         </tr>
-                         Add more rows as needed
-                    </tbody>
+                    </tbody> 
                 </table>
-
-
-            </div> -->
-
-
+                <div id="tableEntry"></div>
+            </div> 
         </div>
+        <script src="../scripts/logindata.js"></script>
 </body>
-
 </html>

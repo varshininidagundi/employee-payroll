@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link type="text/css" rel="stylesheet" href="D:\nodejs_basics\employee_payroll\styles\employee.css">
 </head>
-
 <body>
     <div class="container">
         <div class="header">
@@ -17,42 +15,36 @@
                         class="pr">PAYROLL</span></span>
             </div>
         </div>
-
         <div class="formbody">
             <div class="form-outer-cnt">
                 <form class="form-inner-cnt" action="#" onreset="handleResetForm()" onsubmit="handleSubmitForm(event)">
                     <span class="form-title">Employee Payroll form</span>
-
                     <div class="name-cnt" style="margin-top: 40px;">
-                        <div class="label-cnt"><label class="label" >Name</label></div>
+                        <div class="label-cnt"><label class="label">Name</label></div>
                         <div class="input-cnt"><input type="text" id="name" value="" class="name-input"
                                 autocomplete="off"></div>
                     </div>
                     <div class="name-cnt" style="margin-top: 41px;">
-                        <div class="label-cnt"><label class="label" for="profile1">Profil image</label></div>
+                        <div class="label-cnt"><label class="label" for="profile1">Profile image</label></div>
                         <div class="profile-outer-cnt">
                             <div class="profile-select-cnt"><label class="profile1">
-                                <input type="radio" id="profile1" value="../assets/men.jpg" name="profile">
-                                <img src="../assets/men.jpg" class="profile-img"></label>
+                                    <input type="radio" id="profile1" value="../assets/blackmen.png" name="profile">
+                                    <img src="../assets/blackmen.png" class="profile-img"></label>
                             </div>
-
-                            <div class="profile-select-cnt"><label for="profile2">
-                                <input type="radio" id="profile2" value="../assets/whitewomen.jpg" name="profile">
-                                <img src="../assets/whitewomen.jpg" class="profile-img"></label>
+                            <div class="profile-select-cnt"><label class="profile2">
+                                    <input type="radio" id="profile2" value="../assets/whitewomen.jpg" name="profile">
+                                    <img src="../assets/whiteman.jpg" class="profile-img"></label>
                             </div>
-
-                            <div class="profile-select-cnt"><label for="profile3">
-                                <input type="radio" id="profile3" value="../assets/whitemen.jpg" name="profile">
-                                <img src="../assets/whitemen.jpg" class="profile-img"></label>
+                            <div class="profile-select-cnt"><label class="profile3">
+                                    <input type="radio" id="profile3" value="../assets/whiteman.jpg" name="profile">
+                                    <img src="../assets/whiteman.png" class="profile-img"></label>
                             </div>
-
-                            <div class="profile-select-cnt"><label for ="profile4">
-                                <input type="radio" id="profile4" value="../assets/women.jpg" name="profile">
-                                <img src="../assets/women.jpg" class="profile-img"></label>
+                            <div class="profile-select-cnt"><label class="profile4">
+                                    <input type="radio" id="profile4" value="../assets/blackwomen.jpg" name="profile" style="align-items: center;">
+                                    <img src="../assets/blackwomen.png" class="profile-img"></label>
                             </div>
                         </div>
                     </div>
-
                     <div class="name-cnt" style="margin-top: 57px;">
                         <div class="label-cnt">
                             <label class="label">Gender</label>
@@ -68,7 +60,6 @@
                             </div>
                         </div>
                     </div>
-<!-- 
                     <div class="name-cnt" style="margin-top: 46px;">
                         <div class="label-cnt"><label class="label">Department</label></div>
                         <div class="profile-select-cnt" style="gap: 24px;">
@@ -98,21 +89,18 @@
                                 </label>
                             </div>
                         </div>
-                    </div> -->
-
-
+                    </div>
                     <div class="name-cnt" style="margin-top:46px;">
                         <div class="label-cnt"><label class="label" for="salary">Salary</label></div>
                         <div class="input-cnt">
                             <input type="range" name="salary" id="salary" min="300000" max="500000" step="100"
                                 value="400000">
-                            <output class="salary" for="salary">400000</output>
+                            <output id="output_salary" for="salary">400000</output>
                         </div>
                     </div>
                     <div class="name-cnt" style="margin-top:46px;">
-                        <div class="label-cnt"> <label class="label" for="date">Start Date </label></div>
+                        <div class="label-cnt"> <label class="label" for="date" for="month">Start Date </label></div>
                         <div class="date-cnt">
-
                             <select name="day" class="selectbutton" id="date">
                                 <option class="inner-alpha"> Day</option>
                                 <option value="1">1</option>
@@ -147,8 +135,6 @@
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-
-<!-- 
                             <select name="month" class="selectbutton" id="month">
                                 <option class="inner-alpha">Month</option>
                                 <option value="January">January</option>
@@ -164,8 +150,6 @@
                                 <option value="November">November</option>
                                 <option value="December">December</option>
                             </select>
-
-
                             <select name="year" class="selectbutton" id="year">
                                 <option class="inner-alpha">Year</option>
                                 <option value="2001">2001</option>
@@ -191,14 +175,13 @@
                                 <option value="2021">2021</option>
                                 <option value="2022">2022</option>
                                 <option value="2023">2023</option>
-                            </select> -->
-
+                            </select>
                         </div>
                     </div>
-                    <!-- <div class="name-cnt" style="margin-top:46px;">
+                    <div class="name-cnt" style="margin-top:46px;">
                         <div class="label-cnt"><label class="label" for="note">Note</label></div>
                         <div class="input-cnt"><input type="text" id="note"></div>
-                    </div> -->
+                    </div>
                     <div class="crs" style="margin-top:34px;">
                         <div class="cancelbutton">
                             <button class="cbutton">Cancel</button>
@@ -208,12 +191,9 @@
                             <button class="sbutton" type="reset">Reset</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
-
-
     </div>
     <script src="../scripts/EmployeeDetailes.js"></script>
     <script src="../scripts/EmployeeFormHandler.js"></script>

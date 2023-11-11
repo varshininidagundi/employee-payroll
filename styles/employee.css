@@ -117,9 +117,22 @@
     width: 100%;
     align-items: center;
 }
-
 .label-cnt {
     width: 142px;
+}
+.profile-outer-cnt {
+    display: flex;
+    flex-direction: row;
+    width: 687px;
+    gap: 42px;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+}
+.profile-select-cnt {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .label {
@@ -134,26 +147,22 @@
     width: 687px;
 
 }
-
+.profile1, .profile2, .profile3, .profile4{
+    display: flex;
+    align-items: center;
+}
 .name-input {
     height: 50px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #BDBDBD;
     border-radius: 3px;
-
-    width: 100%;
-}
-
-.profile-outer-cnt {
     display: flex;
-    width: 687px;
-    gap: 42px;
+    width: 100%;
 }
 
 .profile-img {
     width: 45px;
     height: 45px;
-    /* background: transparent url('img/Ellipse 1.png') 0% 0% no-repeat padding-box; */
     opacity: 1;
 }
 #note{
@@ -166,12 +175,7 @@
     opacity: 1;
 }
 
-.profile-select-cnt {
-    display: flex;
-    align-items: center;
-
-}
-
+#salary{width: 627px;}
 .salary-cnt {
     width: 341px;
     height: 50px;
