@@ -25,7 +25,7 @@ const handleSubmitForm = (event) => {
     const enteredDepartment = document.querySelectorAll('[name=department]');
     const selectedDepartment =checkSelected(enteredDepartment, "departemnt") 
     employeeData.department = selectedDepartment;   
-      const date = document.querySelector("#date").value;
+    const date = document.querySelector("#date").value;
     employeeData.date = date
     const month = document.querySelector("#month").value;
     employeeData.month = month
@@ -41,17 +41,31 @@ const handleSubmitForm = (event) => {
     }
     console.log(dummy);
     localStorage.setItem('EmployeeData',JSON.stringify(dummy));
-
+    handleResetForm();
 }
 const handleResetForm = () => {
     const name = document.querySelector('#name')
     name.value = ""
     const note = document.querySelector('#note')
     note.value = ""
-    const female = document.querySelector('#female')
-    female.value = ""
-    const male = document.querySelector('#male')
-    male.value = ""
+    const salary = document.querySelector('#salary')
+    salary.value = ""
+    const output = document.querySelector('#output_salary');
+    output.textContent = "400000"
+    const date = document.querySelector('#date')
+    date.value = "Day" 
+    const month = document.querySelector('#date')
+    month.value = "Month" 
+    const year = document.querySelector('#date')
+    year.value = "Year" 
+    const female = document.querySelector('#female');
+    female.checked = false
+    const male = document.querySelector('#male');
+    male.checked = false
+    const profile = document.querySelectorAll('[name=profile]');
+    profile.forEach((profileCheckbox)=>{
+        profileCheckbox.checked=false;
+    })
 }
 function checkSelected(nodeList, checkFor) {
     let checkedNodeList = [...nodeList].filter((ele) => ele.checked === true)

@@ -3,45 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="D:\nodejs_basics\employee_payroll\styles\dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="nav">
-                <img src="D:\nodejs_basics\employee_payroll\assets\person.jpg" class="employeeimg">
+                <img src="../assets/person.jpg" class="employeeimg">
                 <div type="submit" class="submitbutton"><span class="emp">EMPLOYEE</span><br> <span
-                        class="pr">PAYROLL</div></button>
+                        class="pr">PAYROLL</div>
             </div>
         </div>
          <div class="outer-cnt">
-            <div class="above-emp-cnt">         
-                    <div class="empinbody">Employee Details</div>
-                    <span id="countValue">  </span>
+            <div class="above-table-cnt">         
+                    <div class="emp-cnt"><div class="empinbody">Employee Details</div>
+                    <span id="countValue" class="countValue">  </span></div>
                     <div class="add-cnt">
-                        <img class ="magnify" src="D:\nodejs_basics\employee_payroll\assets\search.png">
-                        <button class="add-button">
-                            Add User</button>
+                        <input type="text" id="searchEmployeeName" ><!--searching employee name-->
+                        <img class ="magnify" src="../assets/search.jpg" id="searchIcon" onclick="searchEmployee()"><!--when click upon this is triggredthis -->
+                        <a class="add-button" href="../templets/employee.html"><label class="add-user"><span class="plus">+</span><snap>Add User</snap></label></a>
                     </div>
-         </div>
+            </div>
             <div class="below-table-cnt">
                 <table class="table">
                     <thead class="thead">
                         <tr>
-                            <!-- <span class="th-thead-one"></span>
-                            <span class="th-thead-name">Name</span>
-                            <span class="th-thead-gender">Gender</span>
-                            <span class="th-thead-department">Department</span>
-                            <span class="th-thead-salary">Salary</span>
-                            <span class="th-thead-startdate">Start Date</span> -->
-                            <th style="width: 5%; height: 30px; color: white;"></th>
-                            <th style="width: 30%; height: 30px; color: white;">Name</th>
-                            <th style="width: 10%; height: 30px; color: white;">Gender</th>
-                            <th style="width: 25%; height: 30px; color: white;">Department</th>
-                            <th style="width: 10%; height: 30px; color: white;">Salary</th>
-                            <th style="width: 15%; height: 30px; color: white;">Start Date</th>
-                            <th id="action" style="width: 25%; height: 30px; color: white;">Actions</th>
+                            <th style="width: 60px;"></th>
+                            <th class="th-thead-name" style="width: 350px;" >NAME</th>
+                            <th class="th-thead-gender " style="width: 110px;">GENDER</th>
+                            <th class="th-thead-department" style="width: 130px;">DEPARTMENT</th>
+                            <th class="th-thead-salary" style="width: 90px;">SALARY</th>
+                            <th class="th-thead-date" style="width: 90px;">START DATE</th>
+                            <th id="action" class="th-thead-action" style="width: 100px;">ACTIONS</th>
                         </tr>
                     </thead>
                     <tbody id="employeeTableBody">
