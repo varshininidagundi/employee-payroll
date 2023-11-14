@@ -54,9 +54,9 @@ const handleResetForm = () => {
     output.textContent = "400000"
     const date = document.querySelector('#date')
     date.value = "Day" 
-    const month = document.querySelector('#date')
+    const month = document.querySelector('#month')
     month.value = "Month" 
-    const year = document.querySelector('#date')
+    const year = document.querySelector('#')
     year.value = "Year" 
     const female = document.querySelector('#female');
     female.checked = false
@@ -65,7 +65,7 @@ const handleResetForm = () => {
     const profile = document.querySelectorAll('[name=profile]');
     profile.forEach((profileCheckbox)=>{
         profileCheckbox.checked=false;
-    })
+    });
 }
 function checkSelected(nodeList, checkFor) {
     let checkedNodeList = [...nodeList].filter((ele) => ele.checked === true)

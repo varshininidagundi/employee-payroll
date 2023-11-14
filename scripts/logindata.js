@@ -16,10 +16,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // delete
     //function handleDeleteEmployee(name){cont restul = storage.filter((employeeName) => name !== employeeName;)//handlling local stoage}
     function deleteEmployeeByName(name) {
-        let results = employeeInformation.filter(employee => employee._name !== name);
+        let filteredEmployees = employeeInformation.filter(employee => employee._name !== name);
         // updateTable();
-        console.log(results);
+        console.log(filteredEmployees);
         //handlling local stoage
+        
+        let employeeValue = "";
+        for (let employee of filteredEmployees) {
+            employeeValue = `<div>
+            <td><img src = "${employee._profile}"></td>
+            <td>${employee._name}</td>
+            <td>${employee._gender}</td>
+            <td>${departemntLabel(employee._department)}</td>
+            <td >&#8377;${employee._salary}</td>
+            <td>${employee._date}${employee._month}${employee._year}</td>
+            <td ><div class="icon-cnt">
+            <img class="icons" src="../assets/trash.png" onclick="deleteEmployeeByName('${employee._name}')"  id='deleteIcon'>
+            <img class="icons" src="../assets/pencil.png"></div></td>
+            </tr> </div> `
+        }
+        localStorage.setItem('EmployeeData', JSON.stringify(employeeInformation));
     }
     function searchEmployee() {
         let searchName = document.querySelector('#searchEmployeeName').value;
@@ -53,18 +69,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         return dpLabel;
     };
-    // function deleteEmployeeByName(name) {
-    //     const index = employeeInformation.findIndex(employee => employee._name === name);
-
-    //     if (index !== -1) {
-    //         employeeInformation.splice(index, 1);
-
-    //         // Update the table display after deletion
-    //         renderTable(); // Call a function to re-render the table
-    //     }
-    // }
-
-
     console.log(typeof employeeInformation);
     if (employeeInformation === null) {
         console.log('true');
@@ -96,7 +100,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         icon.addEventListener('click', function (event) {
             // Extract the employee name associated with this icon
             let employeeName =  event.currentTarget.getAttribute('data-employee-name');
-            deleteEmployeeByName(employeeName);
+            deleteEmployeeByName(JSON.stringify(employeeName));
         });
     });
 });
