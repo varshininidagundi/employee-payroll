@@ -15,8 +15,8 @@ const handleSubmitForm = (event) => {
     const note = document.querySelector('#note').value;
     employeeData.note = note
     const gender = document.querySelectorAll('[name=gender]');
-    let result = checkSelected(gender, "gender");
-    employeeData.gender = result
+    let resultedGender = checkSelected(gender, "gender");
+    employeeData.gender = resultedGender
     const profile = document.querySelectorAll('[name=profile]');
     let empprofile = checkSelected(profile, "profile");
     employeeData.profile = empprofile;
@@ -31,7 +31,6 @@ const handleSubmitForm = (event) => {
     employeeData.month = month
     const year = document.querySelector("#year").value;
     employeeData.year = year
-    //console.log(employeeData, event);
     if(dummy===null){
         dummy=[employeeData];
     }
@@ -56,7 +55,7 @@ const handleResetForm = () => {
     date.value = "Day" 
     const month = document.querySelector('#month')
     month.value = "Month" 
-    const year = document.querySelector('#')
+    const year = document.querySelector('#year')
     year.value = "Year" 
     const female = document.querySelector('#female');
     female.checked = false
@@ -64,8 +63,15 @@ const handleResetForm = () => {
     male.checked = false
     const profile = document.querySelectorAll('[name=profile]');
     profile.forEach((profileCheckbox)=>{
-        profileCheckbox.checked=false;
+        profileCheckbox.checked=false
     });
+    const department = document.querySelectorAll('[name=department]');
+    department.forEach((departmentCheckbox)=>{
+        departmentCheckbox.checked=false
+    });
+}
+const handleCancelForm =() =>{
+    handleResetForm();
 }
 function checkSelected(nodeList, checkFor) {
     let checkedNodeList = [...nodeList].filter((ele) => ele.checked === true)
