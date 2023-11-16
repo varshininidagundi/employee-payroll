@@ -4,11 +4,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function(){
         output.textContent =salary.value;
     });
+   editEmployee();
 })
+function editEmployee(){
+    let editData = JSON.parse(localStorage.getItem('EmployeeEditData'));
+    console.log(editData[0]._name);
+
+}
 const handleSubmitForm = (event) => {
     event.preventDefault()
     let dummy = JSON.parse(localStorage.getItem('EmployeeData'))
-    console.log(dummy)
+    // console.log(dummy)
     let employeeData = new EmployeeDetailes();
     const name = document.querySelector('#name').value;
     employeeData.name = name
