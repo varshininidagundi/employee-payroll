@@ -10,14 +10,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
         searchIcon.addEventListener('click', searchEmployee);
     }
     renderTable(employeeInformation)
-    // localStorage.setItem('EmployeeData', JSON.stringify(employeeInformation));
+    localStorage.setItem('EmployeeData', JSON.stringify(employeeInformation));
     let deleteIcon = document.getElementById('deleteIcon');
     if (deleteIcon) {
         deleteIcon.addEventListener('click', deleteEmployeeByName);
     }
     let editIcon = document.getElementById('editIcon')
     if(editIcon){
-        editIcon.addEventListener('click',handleEditEmployee)
+        if(editIcon.addEventListener('click',handleEditEmployee));
+            // window.location.assign("../templets/employee.html"); 
+        
     }
 });
 let departemntLabel = (departemntList) => {
@@ -45,18 +47,17 @@ function renderTable(employeeInformation) {
                 <td>${employee._date}${employee._month}${employee._year}</td>
                 <td><div class="icon-cnt">
                 <img class="icons" src="../assets/trash.png" id='deleteIcon' data-employee-name="${employee._name}" onclick="deleteEmployeeByName(event)" >
-                <img class="icons" src="../assets/pencil.png" id='editIcon' data-employee-info="${employee._name}" onclick="handleEditEmployee(event)"></div></td>
+                <a href="../templets/employee.html"><img class="icons" src="../assets/pencil.png" id='editIcon' data-employee-info="${employee._name}" onclick="handleEditEmployee(event)"></a></div></td>
                 </tr> </div> `
-                // console.log(JSON.stringify(employee));
         }
         entryIntoTable.innerHTML = employeeValue;
     }
-}// localStorage.setItem('EditEmployee', JSON.stringify('${employee}'))
+}
 function handleEditEmployee(event){
     let employeeEditData = event.target.dataset.employeeInfo;
     let edit = employeeInformation.filter(employee =>employee._name === employeeEditData);
     console.log(edit);
-    localStorage.setItem("EmployeeEditData",edit);
+    localStorage.setItem("EmployeeEditData",JSON.stringify(edit));
 }
 function searchEmployee() {
     
@@ -73,15 +74,12 @@ function searchEmployee() {
         }
 }
 function deleteEmployeeByName(event) {
-    // console.log(name);
     let employeeName = event.target.dataset.employeeName;
     if (Array.isArray(employeeInformation)) {
         let filteredEmployees = employeeInformation.filter(employee => employee._name !== employeeName);
-        // updateTable();
         console.log(filteredEmployees);
         localStorage.setItem('EmployeeData', JSON.stringify(filteredEmployees));
         renderTable(filteredEmployees)
-        //handlling local stoage
     }
     else{
         console.log('error')
